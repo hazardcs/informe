@@ -110,9 +110,12 @@ body {
 }
 
 select {
-    background-color: #888;
+    background-color: rgb(194, 193, 193);
     border: none;
     border-radius: 5px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
 #enviar {
