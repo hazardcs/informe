@@ -170,3 +170,7 @@ select {
 .tabla-informe th {
     border-right: 0.85px solid #000;
 }
+
+#fases {
+    display: none;
+}

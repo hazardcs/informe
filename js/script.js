@@ -3,8 +3,21 @@ document.addEventListener('DOMContentLoaded', function() {
     'use strict';
 
     var enviar = document.getElementById("enviar");
+    let tipo_incidente = document.getElementById("tipo_incidente");
     let dispositivo_afectado = document.getElementById("dispositivo_afectado");
+    var fases = document.getElementById("fases");
+
     dispositivo_afectado.addEventListener('change', function() {
+        if (tipo_incidente.value == "sin_servicio") {
+            if (tdispositivo_afectado.value == "trafo") {
+                fases.style.display = "flex";
+            }
+        }
+    });
+
+    dispositivo_afectado.addEventListener('change', function() {
+
+        tipo_incidente = document.getElementById("tipo_incidente");
         if (dispositivo_afectado.value == "iluminaria") {
             document.getElementById("onchange_dispositivo").innerHTML = "Numero de Luminarias afectadas";
         } else if (dispositivo_afectado.value == "codigo") {
@@ -15,6 +28,9 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById("onchange_dispositivo").innerHTML = "Numero de Poste";
         } else if (dispositivo_afectado.value == "trafo") {
             document.getElementById("onchange_dispositivo").innerHTML = "Numero de Trafo";
+            if (tipo_incidente.value == "sin_servicio") {
+                fases.style.display = "flex";
+            }
         } else {
             document.getElementById("onchange_dispositivo").innerHTML = "Numero de Dispositivo";
         }
@@ -25,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let numero_incidente = document.getElementById("numero_incidente").value;
         let comentario_incidente = document.getElementById("incidente_asociado").value;
         let incidentes = comentario_incidente.split(" ");
-        let tipo_incidente = document.getElementById("tipo_incidente");
+        tipo_incidente = document.getElementById("tipo_incidente");
         let text_accidente = tipo_incidente.options[tipo_incidente.selectedIndex].text;
         dispositivo_afectado = document.getElementById("dispositivo_afectado");
         let text_dispositivo = dispositivo_afectado.options[dispositivo_afectado.selectedIndex].text;
