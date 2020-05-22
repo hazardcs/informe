@@ -17,15 +17,15 @@
             </div>
             <div class="form-container">
                 <form autocomplete="off" id="form_incidente">
-                    <div class="input-container wrap-input">
+                    <div class="input-container">
                         <label for="numero_incidente">Numero de Incidente</label>
                         <input type="text" name="numero_incidente" id="numero_incidente">
                     </div>
-                    <div class="input-container wrap-input">
+                    <div class="input-container">
                         <label for="incidente_asociado">Incidentes Asociados</label>
-                        <textarea name="incidente_asociado" id="comentario_incidente"></textarea>
+                        <textarea name="incidente_asociado" id="incidente_asociado"></textarea>
                     </div>
-                    <div class="input-container wrap-input">
+                    <div class="input-container">
                         <label for="tipo_incidente">Tipo de Incidente</label>
                         <select id="tipo_incidente">
                             <option selected hidden>-- Seleccione Aqui --</option> 
@@ -38,18 +38,29 @@
                         <label for="dispositivo_afectado">Dispositivo Afectado</label>
                         <select id="dispositivo_afectado">
                             <option selected hidden>-- Seleccione Aqui --</option> 
-                            <option value="trafo_monofasico">Trafo Monofasico</option> 
-                            <option value="trafo_trifasico">Trafo Trifasico</option> 
-                            <option value="fusible">Seccionador Fusible</option>
-                            <option value="cuchilla">Seccionador Cuchilla</option>
+                            <option value="trafo">Trafo Monofasico</option> 
+                            <option value="trafo">Trafo Trifasico</option> 
+                            <option value="codigo">Seccionador Fusible</option>
+                            <option value="codigo">Seccionador Cuchilla</option>
                             <option value="puente">Puente</option>
                             <option value="poste">Poste</option>
                             <option value="iluminaria">Iluminaria</option>
                           </select>
                     </div>
-                    <div class="input-container">
-                        <label for="nombre_dispositivo">Nombre de Dispositivo</label>
-                        <input type="text" name="nombre_dispositivo" id="nombre_dispositivo">
+                    <div class="input-container wrap">
+                        <div class="option-both">
+                            <label id="onchange_dispositivo" for="nombre_dispositivo">Nombre de Dispositivo</label>
+                            <input type="text" name="nombre_dispositivo" id="nombre_dispositivo">
+                        </div>
+                        <div class="option-both fw_pt10">
+                            <label for="fases_afectadas">Fases Afectadas</label>
+                            <select id="fases_afectadas">
+                                <option selected hidden>-- Seleccione Aqui --</option> 
+                                <option value="1F">Descarga ATM</option> 
+                                <option value="2F">Lluvia</option>
+                                <option value="3F">Lluvia</option>
+                              </select>
+                        </div>
                     </div>
                     <div class="input-container overflow-control">
                         <p>Fecha y Hora de Superacion</p>
@@ -107,7 +118,49 @@
                 </form>
             </div>
         </div>
+        <div class="informe">
+            <table class="tabla-informe">
+                <tr>
+                    <th>No. Incidente</th>
+                    <td id="no_incidente_table"></td>
+                </tr>
+                <tr>
+                    <th>Incidentes Asociados</th>
+                    <td id="incidentes_asociados_table"></td>
+                </tr>
+                <tr>
+                    <th>Tipo de Incidente</th>
+                    <td id="tipo_incidente_table"></td>
+                </tr>
+                <tr>
+                    <th>Dispositivo Afectado</th>
+                    <td id="dispositivo_afectado_table"></td>
+                </tr>
+                <tr>
+                    <th>Nombre de Dispositivo</th>
+                    <td id="no_dispositivo_table"></td>
+                </tr>
+                <tr>
+                    <th>Fecha y Hora de Superacion</th>
+                    <td id="fecha_hora_table"></td>
+                </tr>
+                <tr>
+                    <th>Causa del Incidente</th>
+                    <td id="causa_table"></td>
+                </tr>
+                <tr>
+                    <th>Detalle del Problema</th>
+                    <td id="detalle_table"></td>
+                </tr>
+                <tr>
+                    <th>Comentario</th>
+                    <td id="comentario_table"></td>
+                </tr>
+            </table>
+        </div>
     </div>
+
+    <script src="js/script.js"></script>
 </body>
 
 </html>

@@ -3,6 +3,10 @@
     margin: 0;
 }
 
+.fw_pt10 {
+    padding-top: 10px;
+}
+
 label {
     padding-top: 2px;
 }
@@ -97,6 +101,15 @@ body {
         justify-content: space-between;
         align-items: flex-start;
     }
+    .option-both input {
+        width: 60%;
+    }
+    .wrap {
+        flex-wrap: wrap;
+    }
+    .wrap>.option-both {
+        flex-basis: 100%;
+    }
     .otro-option {
         display: none;
     }
@@ -137,4 +150,23 @@ select {
     border-radius: 10px;
     border: none;
     background-color: rgb(153, 211, 151);
+}
+
+.tabla-informe {
+    margin: 20px auto;
+    width: 60%;
+    border: 1px solid #000;
+    border-collapse: collapse;
+    font-size: 0.5em;
+}
+
+.tabla-informe th,
+.tabla-informe td {
+    width: 50%;
+    padding: 10px 15px;
+    border-bottom: 0.85px solid #000;
+}
+
+.tabla-informe th {
+    border-right: 0.85px solid #000;
 }
