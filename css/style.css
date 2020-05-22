@@ -3,6 +3,10 @@
     margin: 0;
 }
 
+label {
+    padding-top: 2px;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     /*overflow-x: hidden;*/
@@ -72,6 +76,8 @@ body {
     }
     .date-time-container {
         flex-basis: 65%;
+        text-align: right;
+        padding-right: 10px;
     }
     .date input,
     .time input {
