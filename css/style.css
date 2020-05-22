@@ -26,6 +26,10 @@ body {
     font-size: 22px;
 }
 
+.form-container {
+    font-size: 0.65em;
+}
+
 .form-container form {
     background-color: rgba(146, 179, 214, 0.938);
     display: flex;
@@ -60,9 +64,6 @@ body {
     .option-both>select,
     .option-both>textarea {
         width: 60%;
-    }
-    .option-both>select {
-        height: 100%;
     }
     .form-container form {
         align-items: flex-start;
@@ -107,6 +108,10 @@ body {
     width: 100%;
     display: flex;
     justify-content: center;
+}
+
+textarea {
+    resize: none;
 }
 
 select {
