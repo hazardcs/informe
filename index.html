@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Reporte de Incidentes</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -16,68 +15,90 @@
                 <h1>REPORTE DE INCIDENTES</h1>
             </div>
             <div class="form-container">
-                <form autocomplete="off" method="POST" id="form_incidente">
-                    <div class="input-container input-both">
+                <form autocomplete="off" id="form_incidente">
+                    <div class="input-container">
                         <label for="numero_incidente">Numero de Incidente</label>
                         <input type="text" name="numero_incidente" id="numero_incidente">
                     </div>
-                    <div class="input-container input-both causa_input">
+                    <div class="input-container">
                         <label for="incidente_asociado">Incidentes Asociados</label>
                         <textarea name="incidente_asociado" id="comentario_incidente"></textarea>
                     </div>
-                    <div class="input">
-                        <div class="input-title">
-                            <p>Tipo de Incidente</p>
-                        </div>
-                        <div class="input-container">
-                            <label for="numero_incidente">Con Servicio</label>
-                            <input type="radio" name="tipo_incidente" id="con_servicio">
-                            <label for="numero_incidente">Sin Servicio</label>
-                            <input type="radio" name="tipo_incidente" id="sin_servicio">
-                            <label for="numero_incidente">Alumbrado Publico</label>
-                            <input type="radio" name="tipo_incidente" id="alumbrado_publico">
-                        </div>
+                    <div class="input-container">
+                        <label for="tipo_incidente">Tipo de Incidente</label>
+                        <select id="tipo_incidente">
+                            <option selected hidden>-- Seleccione --</option> 
+                            <option value="con_servivio">Con Servicio</option> 
+                            <option value="sin_servicio">Sin Servicio</option>
+                            <option value="alumbrado_publico">Alumbrado Publico</option>
+                          </select>
                     </div>
-                    <div class="input">
-                        <div class="input-title">
-                            <p>Tipo de Incidente</p>
-                        </div>
-                        <div class="input-container">
-                            <label for="numero_incidente">Trafo</label>
-                            <input type="radio" name="dispositivo_afectado" id="trafo">
-                            <label for="numero_incidente">Seccionador Fusible</label>
-                            <input type="radio" name="dispositivo_afectado" id="seccionador_fusible">
-                            <label for="numero_incidente">Seccionador Cuchilla</label>
-                            <input type="radio" name="dispositivo_afectado" id="seccionador_cuchilla">
-                            <label for="numero_incidente">Puente</label>
-                            <input type="radio" name="dispositivo_afectado" id="puente">
-                            <label for="numero_incidente">Poste</label>
-                            <input type="radio" name="dispositivo_afectado" id="poste">
-                            <label for="numero_incidente">Iluminaria</label>
-                            <input type="radio" name="dispositivo_afectado" id="ilumninaria">
-                        </div>
+                    <div class="input-container">
+                        <label for="dispositivo_afectado">Dispositivo Afectado</label>
+                        <select id="dispositivo_afectado">
+                            <option selected hidden>-- Seleccione --</option> 
+                            <option value="trafo">Trafo</option> 
+                            <option value="fusible">Seccionador Fusible</option>
+                            <option value="cuchilla">Seccionador Cuchilla</option>
+                            <option value="puente">Puente</option>
+                            <option value="poste">Poste</option>
+                            <option value="iluminaria">Iluminaria</option>
+                          </select>
                     </div>
-                    <div class="input-container input-both">
+                    <div class="input-container">
                         <label for="nombre_dispositivo">Nombre de Dispositivo</label>
                         <input type="text" name="nombre_dispositivo" id="nombre_dispositivo">
                     </div>
-                    <div class="input-container input-both">
-                        <label for="fecha_superacion">Fecha y Hora de Superacion</label>
-                        <input type="datetime-local" name="fecha_superacion" id="fecha_superacion">
+                    <div class="input-container">
+                        <p>Fecha y Hora de Superacion</p>
+                        <label for="dia">Dia</label>
+                        <input type="text" name="dia" id="dia">
+                        <label for="mes">Mes</label>
+                        <input type="text" name="mes" id="mes">
+                        <label for="año">Año</label>
+                        <input type="text" name="año" id="año">
+                        <label for="hora">Horas</label>
+                        <input type="text" name="hora" id="hora">
+                        <label for="minutos">Minutos</label>
+                        <input type="text" name="minutos" id="minutos">
+
                     </div>
-                    <div class="input-container input-both causa_input">
+                    <div class="input-container">
                         <label for="causa_incidente">Causa del Incidente</label>
-                        <textarea name="causa_incidente" id="causa_incidente"></textarea>
+                        <select id="causa_incidente">
+                            <option selected hidden>-- Seleccione --</option> 
+                            <option value="descarga_atm">Descarga ATM</option> 
+                            <option value="lluvia">Lluvia</option>
+                            <option value="corrosion">Corrosion</option>
+                            <option value="deslizamiento_terreno">Deslizamiento de Terreno</option>
+                            <option value="arboles">Arboles</option>
+                            <option value="animales">Aves u otro animales</option>
+                            <option value="daño_intencional">Daño Intencional</option>
+                            <option value="choque">Choque</option>
+                            <option value="servicio_normal">Servicio Normal</option>
+                            <option value="daño_interno">Daño Interno</option>
+                          </select>
                     </div>
-                    <div class="input-container input-both">
+                    <div class="input-container">
                         <label for="detalle_problema">Detalle del Problema</label>
-                        <input type="text" name="detalle_problema" id="detalle_problema">
+                        <select id="detalle_problema">
+                            <option selected hidden>-- Seleccione --</option> 
+                            <option value="acometida_arrancada">Acometida Arrancada</option> 
+                            <option value="conector">Conector</option>
+                            <option value="bajante">Bajante</option>
+                            <option value="medidor_averiado">Medidor Averiado</option>
+                            <option value="fusible_quemado">Fusible Quemado</option>
+                            <option value="foco">Foco</option>
+                            <option value="fotocelula">Fotocelula</option>
+                          </select>
+                        <label for="otro_detalle">Otros</label>
+                        <input type="text" name="otro_detalle" id="otro_detalle">
                     </div>
-                    <div class="input-container input-both causa_input">
-                        <label for="comentario_incidente">Comentario del Incidente</label>
-                        <textarea name="comentario_incidente" id="comentario_incidente"></textarea>
+                    <div class="input-container">
+                        <label for="comentario_informe">Comentario</label>
+                        <textarea name="comentario_informe" id="comentario_informe"></textarea>
                     </div>
-                    <input type="submit" value="Enviar Incidente">
+                    <input type="button" id="enviar" value="Enviar">
                 </form>
             </div>
         </div>
