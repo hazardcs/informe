@@ -1,67 +1,85 @@
-    * {
-        padding: 0;
-        margin: 0;
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    /*overflow-x: hidden;*/
+}
+
+.container {
+    width: 100%;
+    max-width: 1144px;
+    margin: 0 auto;
+}
+
+.banner {
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(170, 221, 217);
+}
+
+.banner h1 {
+    font-size: 22px;
+}
+
+.form-container form {
+    background-color: rgba(146, 179, 214, 0.938);
+    display: flex;
+    flex-direction: column;
+}
+
+.input-container {
+    display: flex;
+}
+
+.input-container select {
+    text-align: center;
+}
+
+@media (min-width:332px) {
+    .input-container label {
+        flex-basis: 40%;
     }
-    
-    body {
-        font-family: 'Roboto', sans-serif;
-        /*overflow-x: hidden;*/
+    .input-container {
+        justify-content: space-between;
     }
-    
-    .container {
-        width: 100%;
-        max-width: 1144px;
-        margin: 0 auto;
+    .input-container textarea,
+    .input-container input,
+    .input-container select {
+        width: 60%;
     }
-    
-    .banner {
-        display: flex;
-        height: 50px;
-        justify-content: center;
-        align-items: center;
-        background-color: rgb(170, 221, 217);
-    }
-    
-    .banner h1 {
-        font-size: 22px;
-    }
-    
+}
+
+@media (min-width:361px) {
     .form-container form {
-        background-color: rgba(146, 179, 214, 0.938);
+        align-items: flex-start;
+        padding-top: 8px;
+        padding-left: 10px;
+    }
+    .overflow-control {
         display: flex;
         flex-direction: column;
     }
-    
-    @media (min-width:361px) {
-        .form-container form {
-            align-items: flex-start;
-            padding-top: 8px;
-            padding-left: 10px;
-        }
-        .overflow-control {
-            display: flex;
-            flex-direction: column;
-        }
-        .input-container {
-            display: flex;
-            justify-content: space-between;
-        }
-    }
-    
-    .option-both {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-    }
-    
-    .overflow-control input {
-        width: 30px;
-    }
-    
-    .input-container {
-        margin: 5px 10px;
-        padding: 8px 10px;
-        border: 1.5px solid #fff;
-        border-radius: 5px;
-        width: 88%;
-    }
+}
+
+.option-both {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.overflow-control input {
+    width: 30px;
+}
+
+.input-container {
+    margin: 5px 10px;
+    padding: 8px 10px;
+    border: 1.5px solid #fff;
+    border-radius: 5px;
+    width: 88%;
+}
