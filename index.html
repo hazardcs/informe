@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporte de Incidentes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="main">
+            <div class="banner">
+                <h1>REPORTE DE INCIDENTES</h1>
+            </div>
+            <div class="form-container">
+                <form autocomplete="off" method="POST" id="form_incidente">
+                    <div class="input-container input-both">
+                        <label for="numero_incidente">Numero de Incidente</label>
+                        <input type="text" name="numero_incidente" id="numero_incidente">
+                    </div>
+                    <div class="input-container input-both causa_input">
+                        <label for="incidente_asociado">Incidentes Asociados</label>
+                        <textarea name="incidente_asociado" id="comentario_incidente"></textarea>
+                    </div>
+                    <div class="input">
+                        <div class="input-title">
+                            <p>Tipo de Incidente</p>
+                        </div>
+                        <div class="input-container">
+                            <label for="numero_incidente">Con Servicio</label>
+                            <input type="radio" name="tipo_incidente" id="con_servicio">
+                            <label for="numero_incidente">Sin Servicio</label>
+                            <input type="radio" name="tipo_incidente" id="sin_servicio">
+                            <label for="numero_incidente">Alumbrado Publico</label>
+                            <input type="radio" name="tipo_incidente" id="alumbrado_publico">
+                        </div>
+                    </div>
+                    <div class="input">
+                        <div class="input-title">
+                            <p>Tipo de Incidente</p>
+                        </div>
+                        <div class="input-container">
+                            <label for="numero_incidente">Trafo</label>
+                            <input type="radio" name="dispositivo_afectado" id="trafo">
+                            <label for="numero_incidente">Seccionador Fusible</label>
+                            <input type="radio" name="dispositivo_afectado" id="seccionador_fusible">
+                            <label for="numero_incidente">Seccionador Cuchilla</label>
+                            <input type="radio" name="dispositivo_afectado" id="seccionador_cuchilla">
+                            <label for="numero_incidente">Puente</label>
+                            <input type="radio" name="dispositivo_afectado" id="puente">
+                            <label for="numero_incidente">Poste</label>
+                            <input type="radio" name="dispositivo_afectado" id="poste">
+                            <label for="numero_incidente">Iluminaria</label>
+                            <input type="radio" name="dispositivo_afectado" id="ilumninaria">
+                        </div>
+                    </div>
+                    <div class="input-container input-both">
+                        <label for="nombre_dispositivo">Nombre de Dispositivo</label>
+                        <input type="text" name="nombre_dispositivo" id="nombre_dispositivo">
+                    </div>
+                    <div class="input-container input-both">
+                        <label for="fecha_superacion">Fecha y Hora de Superacion</label>
+                        <input type="datetime-local" name="fecha_superacion" id="fecha_superacion">
+                    </div>
+                    <div class="input-container input-both causa_input">
+                        <label for="causa_incidente">Causa del Incidente</label>
+                        <textarea name="causa_incidente" id="causa_incidente"></textarea>
+                    </div>
+                    <div class="input-container input-both">
+                        <label for="detalle_problema">Detalle del Problema</label>
+                        <input type="text" name="detalle_problema" id="detalle_problema">
+                    </div>
+                    <div class="input-container input-both causa_input">
+                        <label for="comentario_incidente">Comentario del Incidente</label>
+                        <textarea name="comentario_incidente" id="comentario_incidente"></textarea>
+                    </div>
+                    <input type="submit" value="Enviar Incidente">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
