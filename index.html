@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Reporte de Incidentes</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -49,19 +50,22 @@
                         <label for="nombre_dispositivo">Nombre de Dispositivo</label>
                         <input type="text" name="nombre_dispositivo" id="nombre_dispositivo">
                     </div>
-                    <div class="input-container">
+                    <div class="input-container overflow-control">
                         <p>Fecha y Hora de Superacion</p>
-                        <label for="dia">Dia</label>
-                        <input type="text" name="dia" id="dia">
-                        <label for="mes">Mes</label>
-                        <input type="text" name="mes" id="mes">
-                        <label for="año">Año</label>
-                        <input type="text" name="año" id="año">
-                        <label for="hora">Horas</label>
-                        <input type="text" name="hora" id="hora">
-                        <label for="minutos">Minutos</label>
-                        <input type="text" name="minutos" id="minutos">
-
+                        <div class="date">
+                            <label for="dia">Dia</label>
+                            <input type="text" name="dia" id="dia">
+                            <label for="mes">Mes</label>
+                            <input type="text" name="mes" id="mes">
+                            <label for="año">Año</label>
+                            <input type="text" name="año" id="año">
+                        </div>
+                        <div class="time">
+                            <label for="hora">Horas</label>
+                            <input type="text" name="hora" id="hora">
+                            <label for="minutos">Minutos</label>
+                            <input type="text" name="minutos" id="minutos">
+                        </div>
                     </div>
                     <div class="input-container">
                         <label for="causa_incidente">Causa del Incidente</label>
@@ -79,20 +83,24 @@
                             <option value="daño_interno">Daño Interno</option>
                           </select>
                     </div>
-                    <div class="input-container">
-                        <label for="detalle_problema">Detalle del Problema</label>
-                        <select id="detalle_problema">
-                            <option selected hidden>-- Seleccione --</option> 
-                            <option value="acometida_arrancada">Acometida Arrancada</option> 
-                            <option value="conector">Conector</option>
-                            <option value="bajante">Bajante</option>
-                            <option value="medidor_averiado">Medidor Averiado</option>
-                            <option value="fusible_quemado">Fusible Quemado</option>
-                            <option value="foco">Foco</option>
-                            <option value="fotocelula">Fotocelula</option>
-                          </select>
-                        <label for="otro_detalle">Otros</label>
-                        <input type="text" name="otro_detalle" id="otro_detalle">
+                    <div class="input-container multi-option">
+                        <div class="option-both">
+                            <label for="detalle_problema">Detalle del Problema</label>
+                            <select id="detalle_problema">
+                                <option selected hidden>-- Seleccione --</option> 
+                                <option value="acometida_arrancada">Acometida Arrancada</option> 
+                                <option value="conector">Conector</option>
+                                <option value="bajante">Bajante</option>
+                                <option value="medidor_averiado">Medidor Averiado</option>
+                                <option value="fusible_quemado">Fusible Quemado</option>
+                                <option value="foco">Foco</option>
+                                <option value="fotocelula">Fotocelula</option>
+                              </select>
+                        </div>
+                        <div class="option-both">
+                            <label for="otro_detalle">Otros</label>
+                            <textarea name="otro_detalle" id="otro_detalle"></textarea>
+                        </div>
                     </div>
                     <div class="input-container">
                         <label for="comentario_informe">Comentario</label>
