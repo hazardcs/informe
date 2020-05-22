@@ -76,7 +76,7 @@ body {
     .time input {
         margin-left: 10px;
         height: 15px;
-        width: auto
+        width: 110px
     }
     .date,
     .time {
@@ -110,6 +110,8 @@ body {
 }
 
 select {
+    height: 40px;
+    text-align: center;
     background-color: rgb(194, 193, 193);
     border: none;
     border-radius: 5px;
