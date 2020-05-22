@@ -52,19 +52,15 @@
                     </div>
                     <div class="input-container overflow-control">
                         <p>Fecha y Hora de Superacion</p>
-                        <div class="date">
-                            <label for="dia">Dia</label>
-                            <input type="text" name="dia" id="dia">
-                            <label for="mes">Mes</label>
-                            <input type="text" name="mes" id="mes">
-                            <label for="año">Año</label>
-                            <input type="text" name="año" id="año">
-                        </div>
-                        <div class="time">
-                            <label for="hora">Horas</label>
-                            <input type="text" name="hora" id="hora">
-                            <label for="minutos">Minutos</label>
-                            <input type="text" name="minutos" id="minutos">
+                        <div class="date-time-container">
+                            <div class="date">
+                                <label for="fecha">Fecha</label>
+                                <input type="date" name="fecha" id="fecha">
+                            </div>
+                            <div class="time">
+                                <label for="hora">Hora</label>
+                                <input type="time" name="hora" id="hora">
+                            </div>
                         </div>
                     </div>
                     <div class="input-container">
@@ -97,7 +93,7 @@
                                 <option value="fotocelula">Fotocelula</option>
                               </select>
                         </div>
-                        <div class="option-both">
+                        <div class="option-both otro-option">
                             <label for="otro_detalle">Otros</label>
                             <textarea name="otro_detalle" id="otro_detalle"></textarea>
                         </div>
@@ -106,7 +102,7 @@
                         <label for="comentario_informe">Comentario</label>
                         <textarea name="comentario_informe" id="comentario_informe"></textarea>
                     </div>
-                    <input type="button" id="enviar" value="Enviar">
+                    <input type="button" id="enviar" value="Generar Informe">
                 </form>
             </div>
         </div>

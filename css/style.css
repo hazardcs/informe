@@ -32,7 +32,8 @@ body {
     flex-direction: column;
 }
 
-.input-container {
+.input-container,
+.option-both {
     display: flex;
 }
 
@@ -41,39 +42,57 @@ body {
 }
 
 @media (min-width:332px) {
-    .input-container label {
+    .input-container>label,
+    .option-both label {
         flex-basis: 40%;
     }
-    .input-container {
+    .input-container,
+    .option-both {
         justify-content: space-between;
+        width: 100%;
     }
-    .input-container textarea,
-    .input-container input,
-    .input-container select {
+    .input-container textarea {
+        height: 100px;
+    }
+    .input-container>textarea,
+    .input-container>input,
+    .input-container>select,
+    .option-both>select,
+    .option-both>textarea {
         width: 60%;
     }
-}
-
-@media (min-width:361px) {
+    .option-both>select {
+        height: 100%;
+    }
     .form-container form {
         align-items: flex-start;
         padding-top: 8px;
-        padding-left: 10px;
+        padding-left: 2px;
     }
-    .overflow-control {
+    .date-time-container {
+        flex-basis: 65%;
+    }
+    .date input,
+    .time input {
+        margin-left: 10px;
+        height: 15px;
+        width: auto
+    }
+    .date,
+    .time {
+        padding-top: 8px;
+    }
+    .overflow-control p {
+        flex-basis: 30%;
+    }
+    .option-both {
         display: flex;
-        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
     }
-}
-
-.option-both {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-
-.overflow-control input {
-    width: 30px;
+    .otro-option {
+        display: none;
+    }
 }
 
 .input-container {
@@ -82,4 +101,18 @@ body {
     border: 1.5px solid #fff;
     border-radius: 5px;
     width: 88%;
+}
+
+.enviar-input {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#enviar {
+    margin: 20px auto;
+    padding: 15px 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(153, 211, 151);
 }
