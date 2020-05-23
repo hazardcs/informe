@@ -28,6 +28,8 @@ document.addEventListener('DOMContentLoaded', function() {
             iluminaria.removeAttribute("hidden");
             iluminaria.setAttribute("selected", "");
             dispositivo_afectado.setAttribute("disabled", "");
+            document.getElementById("dispositivo_table").innerHTML = "Numero de Luminarias afectadas";
+            document.getElementById("onchange_dispositivo").innerHTML = "Numero de Luminarias afectadas";
         } else {
             iluminaria.setAttribute("hidden", "");
             dispositivo_afectado.removeAttribute("disabled");
