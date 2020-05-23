@@ -7,11 +7,13 @@ document.addEventListener('DOMContentLoaded', function() {
     let dispositivo_afectado = document.getElementById("dispositivo_afectado");
     var fases = document.getElementById("fases");
 
-    dispositivo_afectado.addEventListener('change', function() {
+    document.addEventListener('change', function() {
         if (tipo_incidente.value == "sin_servicio") {
-            if (tdispositivo_afectado.value == "trafo") {
-                fases.style.display = "flex";
-            }
+
+            fases.style.display = "flex";
+
+        } else {
+            fases.style.display = "none";
         }
     });
 
@@ -28,9 +30,6 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById("onchange_dispositivo").innerHTML = "Numero de Poste";
         } else if (dispositivo_afectado.value == "trafo") {
             document.getElementById("onchange_dispositivo").innerHTML = "Numero de Trafo";
-            if (tipo_incidente.value == "sin_servicio") {
-                fases.style.display = "flex";
-            }
         } else {
             document.getElementById("onchange_dispositivo").innerHTML = "Numero de Dispositivo";
         }
