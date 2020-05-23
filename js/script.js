@@ -55,6 +55,9 @@ document.addEventListener('DOMContentLoaded', function() {
         } else if (dispositivo_afectado.value == "trafo") {
             document.getElementById("onchange_dispositivo").innerHTML = "Numero de Trafo";
             document.getElementById("dispositivo_table").innerHTML = "Numero de Trafo";
+        } else if (dispositivo_afectado.value == "medidor_dispositivo") {
+            document.getElementById("onchange_dispositivo").innerHTML = "Numero de Medidor";
+            document.getElementById("dispositivo_table").innerHTML = "Numero de Medidor";
         } else {
             document.getElementById("onchange_dispositivo").innerHTML = "Numero de Dispositivo";
             document.getElementById("dispositivo_table").innerHTML = "Numero de Dispositivo";
