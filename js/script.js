@@ -15,6 +15,11 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             fases.style.display = "none";
         }
+        if (tipo_incidente.value == "alumbrado_publico") {
+
+            dispositivo_afectado.innerHTML = "<option value='iluminaria'>Iluminaria</option>";
+
+        }
     });
 
     dispositivo_afectado.addEventListener('change', function() {
