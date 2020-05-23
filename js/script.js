@@ -9,6 +9,9 @@ document.addEventListener('DOMContentLoaded', function() {
     var enviar = document.getElementById("enviar");
     let tipo_incidente = document.getElementById("tipo_incidente");
     let dispositivo_afectado = document.getElementById("dispositivo_afectado");
+    let componente = document.getElementById("componente_falla");
+    let detalle = document.getElementById("detalle_problema");
+    let causa = document.getElementById("causa_incidente");
     let iluminaria = document.getElementById("iluminaria");
     var fases = document.getElementById("fases");
 
@@ -54,6 +57,36 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById("onchange_dispositivo").innerHTML = "Numero de Dispositivo";
             document.getElementById("dispositivo_table").innerHTML = "Numero de Dispositivo";
         }
+
+        if (dispositivo_afectado.value == "otro") {
+            document.getElementById("otro_dispositivo").style.display = "flex";
+        } else {
+            document.getElementById("otro_dispositivo").style.display = "none";
+        }
+    });
+
+    causa.addEventListener('change', function() {
+        if (causa.value == "otro") {
+            document.getElementById("otra_causa").style.display = "flex";
+        } else {
+            document.getElementById("otra_causa").style.display = "none";
+        }
+    });
+
+    componente.addEventListener('change', function() {
+        if (componente.value == "otro") {
+            document.getElementById("otro_componente").style.display = "flex";
+        } else {
+            document.getElementById("otro_componente").style.display = "none";
+        }
+    });
+
+    detalle.addEventListener('change', function() {
+        if (detalle.value == "otro") {
+            document.getElementById("otro_detalle").style.display = "flex";
+        } else {
+            document.getElementById("otro_detalle").style.display = "none";
+        }
     });
 
     enviar.addEventListener('click', function() {
@@ -73,13 +106,12 @@ document.addEventListener('DOMContentLoaded', function() {
         let fases_afectadas = document.getElementById("fases_afectadas").value;
         let fecha = document.getElementById("fecha");
         let hora = document.getElementById("hora");
-        let causa = document.getElementById("causa_incidente");
+        causa = document.getElementById("causa_incidente");
         let causa_text = causa.options[causa.selectedIndex].text;
-        let componente = document.getElementById("componente_falla");
+        componente = document.getElementById("componente_falla");
         let componente_text = componente.options[componente.selectedIndex].text;
-        let detalle = document.getElementById("detalle_problema");
+        detalle = document.getElementById("detalle_problema");
         let detalle_text = detalle.options[detalle.selectedIndex].text;
-        let otro_detalle = document.getElementById("otro_detalle");
         let comentario = document.getElementById("comentario_informe").value;
         let paragraph = document.createElement("p");
 
@@ -97,11 +129,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
         document.getElementById("incidentes_asociados_table").appendChild(paragraph);
         document.getElementById("tipo_incidente_table").innerHTML = `<p>${text_accidente}</p>`;
-        document.getElementById("dispositivo_afectado_table").innerHTML = `<p>${text_dispositivo}</p>`;
+
+        if (dispositivo_afectado.value == "otro") {
+            document.getElementById("dispositivo_afectado_table").innerHTML = `<p>${document.getElementById("otro_dispositivo_text").value}</p>`;
+        } else {
+            document.getElementById("dispositivo_afectado_table").innerHTML = `<p>${text_dispositivo}</p>`;
+        }
         document.getElementById("no_dispositivo_table").innerHTML = `<p>${nombre_dispositivo}</p>`;
         document.getElementById("fases_afectadas_table").innerHTML = `<p>${fases_afectadas}</p>`;
         document.getElementById("fecha_hora_table").innerHTML = `<p>Fecha ${fecha.value} <br> <br>Hora ${hora.value}</p>`;
-        document.getElementById("causa_table").innerHTML = `<p>${causa_text}</p>`;
+        if (dispositivo_afectado.value == "otro") {
+            document.getElementById("causa_table").innerHTML = `<p>${document.getElementById("otra_causa_text").value}</p>`;
+        } else {
+            document.getElementById("causa_table").innerHTML = `<p>${causa_text}</p>`;
+        }
         document.getElementById("componente_table").innerHTML = `<p>${componente_text}</p>`;
         document.getElementById("detalle_table").innerHTML = `<p>${detalle_text}</p>`;
         document.getElementById("comentario_table").innerHTML = `<p>${comentario}</p>`;

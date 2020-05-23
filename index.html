@@ -34,18 +34,25 @@
                             <option value="alumbrado_publico">Alumbrado Publico</option>
                           </select>
                     </div>
-                    <div class="input-container">
-                        <label for="dispositivo_afectado">Dispositivo o Elemento Afectado</label>
-                        <select id="dispositivo_afectado">
-                            <option selected hidden>-- Seleccione Aqui --</option> 
-                            <option value="trafo">Trafo Monofasico</option> 
-                            <option value="trafo">Trafo Trifasico</option> 
-                            <option value="codigo">Seccionador Fusible</option>
-                            <option value="codigo">Seccionador Cuchilla</option>
-                            <option value="puente">Puente</option>
-                            <option value="poste">Poste</option>
-                            <option id="iluminaria" value="iluminaria" disabled>Iluminaria</option>
-                        </select>
+                    <div class="input-container multi-option">
+                        <div class="option-both">
+                            <label for="dispositivo_afectado">Dispositivo o Elemento Afectado</label>
+                            <select id="dispositivo_afectado">
+                                <option selected hidden>-- Seleccione Aqui --</option> 
+                                <option value="trafo">Trafo Monofasico</option> 
+                                <option value="trafo">Trafo Trifasico</option> 
+                                <option value="codigo">Seccionador Fusible</option>
+                                <option value="codigo">Seccionador Cuchilla</option>
+                                <option value="puente">Puente</option>
+                                <option value="poste">Poste</option>
+                                <option id="iluminaria" value="iluminaria" disabled>Iluminaria</option>
+                                <option value="otro">Otros</option>
+                            </select>
+                        </div>
+                        <div id="otro_dispositivo" class="option-both otro-option">
+                            <label for="otro_dispositivo_text">Otros</label>
+                            <textarea id="otro_dispositivo_text" name="otro_dispositivo_text"></textarea>
+                        </div>
                     </div>
                     <div class="input-container wrap">
                         <div class="option-both">
@@ -75,53 +82,67 @@
                             </div>
                         </div>
                     </div>
-                    <div class="input-container">
-                        <label for="causa_incidente">Causa del Incidente</label>
-                        <select id="causa_incidente">
-                            <option selected hidden>-- Seleccione Aqui --</option> 
-                            <option value="descarga_atm">Descarga ATM</option> 
-                            <option value="lluvia">Lluvia</option>
-                            <option value="viento">Viento</option>
-                            <option value="corrosion">Corrosion</option>
-                            <option value="incendio">Incendio</option>
-                            <option value="deslizamiento_terreno">Deslizamiento de Terreno</option>
-                            <option value="inundacion">Inundacion</option>
-                            <option value="arboles">Arboles</option>
-                            <option value="aves">Aves</option>
-                            <option value="animales">Otros Animales</option>
-                            <option value="daño_intencional">Daño Intencional</option>
-                            <option value="daño_accidental">Daño accidental de particulares</option>
-                            <option value="choque">Choque</option>
-                            <option value="servicio_normal">Servicio Normal</option>
-                            <option value="daño_interno">Daño Interno</option>
-                            <option value="construccion">Diseño, instalacion o construccion</option>
-                            <option value="proteccion">Proteccion</option>
-                            <option value="equipamiento">Falla de equipamiento</option>
-                          </select>
+                    <div class="input-container multi-option">
+                        <div class="option-both">
+                            <label for="causa_incidente">Causa del Incidente</label>
+                            <select id="causa_incidente">
+                                <option selected hidden>-- Seleccione Aqui --</option> 
+                                <option value="descarga_atm">Descarga ATM</option> 
+                                <option value="lluvia">Lluvia</option>
+                                <option value="viento">Viento</option>
+                                <option value="corrosion">Corrosion</option>
+                                <option value="incendio">Incendio</option>
+                                <option value="deslizamiento_terreno">Deslizamiento de Terreno</option>
+                                <option value="inundacion">Inundacion</option>
+                                <option value="arboles">Arboles</option>
+                                <option value="aves">Aves</option>
+                                <option value="animales">Otros Animales</option>
+                                <option value="daño_intencional">Daño Intencional</option>
+                                <option value="daño_accidental">Daño accidental de particulares</option>
+                                <option value="choque">Choque</option>
+                                <option value="servicio_normal">Servicio Normal</option>
+                                <option value="daño_interno">Daño Interno</option>
+                                <option value="construccion">Diseño, instalacion o construccion</option>
+                                <option value="proteccion">Proteccion</option>
+                                <option value="equipamiento">Falla de equipamiento</option>
+                                <option value="otro">Otros</option>
+                            </select>
+                        </div>
+                        <div id="otra_causa" class="option-both otro-option">
+                            <label for="otro_causa_text">Otros</label>
+                            <textarea name="otra_causa_text" id="otra_causa_text"></textarea>
+                        </div>
                     </div>
-                    <div class="input-container">
-                        <label for="componente_falla">Componente con Falla</label>
-                        <select id="componente_falla">
-                            <option selected hidden>-- Seleccione Aqui --</option> 
-                            <option value="disyuntor">Disyuntor</option> 
-                            <option value="reconectador">Reconectador</option>
-                            <option value="transformador">Transformador de Distribucion</option>
-                            <option value="camara">Camara de Transformacion</option>
-                            <option value="seccionador_componente">Seccionador</option>
-                            <option value="seccionalizador">Seccionalizador</option>
-                            <option value="tc">TC</option>
-                            <option value="tp">TP</option>
-                            <option value="pararrayo_componente">Pararrayo</option>
-                            <option value="conductor_aereo">Conductor Aereo</option>
-                            <option value="conductor_subterraneo">Conductor Subterraneo</option>
-                            <option value="poste_distribucion">Poste de Distribucion</option>
-                            <option value="fusible_componente">Fusible</option>
-                            <option value="base_portafusible">Base Portafusible</option>
-                            <option value="aislador">Aislador</option>
-                            <option value="medidor_bt_mt">Medidor de BT/MT</option>
-                            <option value="acometida_componente">Acometida</option>
-                            <option value="conector">Conector</option>
+                    <div class="input-container multi-option">
+                        <div class="option-both">
+                            <label for="componente_falla">Componente con Falla</label>
+                            <select id="componente_falla">
+                                <option selected hidden>-- Seleccione Aqui --</option> 
+                                <option value="disyuntor">Disyuntor</option> 
+                                <option value="reconectador">Reconectador</option>
+                                <option value="transformador">Transformador de Distribucion</option>
+                                <option value="camara">Camara de Transformacion</option>
+                                <option value="seccionador_componente">Seccionador</option>
+                                <option value="seccionalizador">Seccionalizador</option>
+                                <option value="tc">TC</option>
+                                <option value="tp">TP</option>
+                                <option value="pararrayo_componente">Pararrayo</option>
+                                <option value="conductor_aereo">Conductor Aereo</option>
+                                <option value="conductor_subterraneo">Conductor Subterraneo</option>
+                                <option value="poste_distribucion">Poste de Distribucion</option>
+                                <option value="fusible_componente">Fusible</option>
+                                <option value="base_portafusible">Base Portafusible</option>
+                                <option value="aislador">Aislador</option>
+                                <option value="medidor_bt_mt">Medidor de BT/MT</option>
+                                <option value="acometida_componente">Acometida</option>
+                                <option value="conector">Conector</option>
+                                <option value="otro">Otros</option>
                           </select>
+                        </div>
+                        <div id="otro_componente" class="option-both otro-option">
+                            <label for="otro_componente_text">Otros</label>
+                            <textarea name="otro_componente_text" id="otro_componente_text"></textarea>
+                        </div>
                     </div>
                     <div class="input-container multi-option">
                         <div class="option-both">
@@ -151,11 +172,12 @@
                                 <option value="seccionador">Seccionador en mal estado</option>
                                 <option value="tensores">Tensor roto/flojo</option>
                                 <option value="trafo_daño">Trafo con daño</option>
-                              </select>
+                                <option value="otro">Otros</option>
+                            </select>
                         </div>
-                        <div class="option-both otro-option">
+                        <div id="otro_detalle" class="option-both otro-option">
                             <label for="otro_detalle">Otros</label>
-                            <textarea name="otro_detalle" class="otro_detalle"></textarea>
+                            <textarea name="otro_detalle" id="otro_detalle"></textarea>
                         </div>
                     </div>
                     <div class="input-container">

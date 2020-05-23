@@ -124,6 +124,11 @@ body {
     }
     .otro-option {
         display: none;
+        padding-top: 10px;
+    }
+    .multi-option {
+        display: flex;
+        flex-wrap: wrap;
     }
 }
 
