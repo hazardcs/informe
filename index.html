@@ -15,7 +15,7 @@
             <div class="banner">
                 <h1>REPORTE DE INCIDENTES</h1>
             </div>
-            <div class="form-container">
+            <div id="main_form" class="form-container">
                 <form autocomplete="off" id="form_incidente">
                     <div class="input-container">
                         <label for="numero_incidente">Numero de Incidente</label>
@@ -166,7 +166,7 @@
                 </form>
             </div>
         </div>
-        <div class="informe">
+        <div id="informe_container" class="informe">
             <table class="tabla-informe">
                 <tr>
                     <th>No. Incidente</th>
@@ -213,6 +213,10 @@
                     <td id="comentario_table"></td>
                 </tr>
             </table>
+            <form class="informe-options">
+                <input type="button" id="nuevo_informe" value="Crear Nuevo Informe">
+                <input type="button" id="modificar_informe" value="Modificar Informe">
+            </form>
         </div>
     </div>
 

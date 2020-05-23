@@ -2,6 +2,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     'use strict';
 
+    let informe = document.getElementById("informe_container");
+    let formulario = document.getElementById("main_form");
+    let nuevo_informe = document.getElementById("nuevo_informe");
+    let modificar_informe = document.getElementById("modificar_informe");
     var enviar = document.getElementById("enviar");
     let tipo_incidente = document.getElementById("tipo_incidente");
     let dispositivo_afectado = document.getElementById("dispositivo_afectado");
@@ -54,6 +58,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     enviar.addEventListener('click', function() {
 
+        formulario.style.display = "none";
+        window.scrollTo(0, 0);
+        informe.style.display = "block";
+
         let numero_incidente = document.getElementById("numero_incidente").value;
         let comentario_incidente = document.getElementById("incidente_asociado").value;
         let incidentes = comentario_incidente.split(" ");
@@ -97,6 +105,21 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById("componente_table").innerHTML = `<p>${componente_text}</p>`;
         document.getElementById("detalle_table").innerHTML = `<p>${detalle_text}</p>`;
         document.getElementById("comentario_table").innerHTML = `<p>${comentario}</p>`;
+
+    });
+
+    modificar_informe.addEventListener('click', function() {
+
+        formulario.style.display = "block";
+        window.scrollTo(0, 0);
+        informe.style.display = "none";
+
+    });
+
+    nuevo_informe.addEventListener('click', function() {
+
+        location.reload();
+        window.scrollTo(0, 0);
 
     });
 

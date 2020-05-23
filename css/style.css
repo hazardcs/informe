@@ -13,6 +13,11 @@ textarea {
     border-radius: 2px;
 }
 
+input[type="button"]:hover,
+select {
+    cursor: pointer;
+}
+
 label {
     padding-top: 2px;
 }
@@ -160,7 +165,7 @@ select {
 }
 
 .tabla-informe {
-    margin: 20px auto;
+    margin: 0 auto;
     width: 60%;
     border: 1px solid #000;
     border-collapse: collapse;
@@ -180,4 +185,21 @@ select {
 
 #fases {
     display: none;
+}
+
+.informe {
+    background-color: rgb(188, 252, 230);
+    padding: 20px 0;
+    display: none;
+}
+
+.informe-options {
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.informe-options input {
+    font-size: 0.5em;
+    padding: 5px 10px;
 }
