@@ -73,16 +73,21 @@ document.addEventListener('DOMContentLoaded', function() {
         let detalle_text = detalle.options[detalle.selectedIndex].text;
         let otro_detalle = document.getElementById("otro_detalle");
         let comentario = document.getElementById("comentario_informe").value;
+        let paragraph = document.createElement("p");
 
         document.getElementById("no_incidente_table").innerHTML = `<p>${numero_incidente}</p>`;
 
+
+
+        enviar.addEventListener('click', function() {
+            document.getElementById("incidentes_asociados_table").removeChild(paragraph);
+        });
+
         for (let i = 0; i < incidentes.length; i++) {
-            let text = document.createTextNode(incidentes[i]);
-            let incidente = document.createElement("p");
-            incidente.appendChild(text);
-            document.getElementById("incidentes_asociados_table").appendChild(incidente);
+            paragraph.innerHTML += incidentes[i] + "<br>";
         }
 
+        document.getElementById("incidentes_asociados_table").appendChild(paragraph);
         document.getElementById("tipo_incidente_table").innerHTML = `<p>${text_accidente}</p>`;
         document.getElementById("dispositivo_afectado_table").innerHTML = `<p>${text_dispositivo}</p>`;
         document.getElementById("no_dispositivo_table").innerHTML = `<p>${nombre_dispositivo}</p>`;
