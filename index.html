@@ -44,8 +44,8 @@
                             <option value="codigo">Seccionador Cuchilla</option>
                             <option value="puente">Puente</option>
                             <option value="poste">Poste</option>
-                            <option value="iluminaria">Iluminaria</option>
-                          </select>
+                            <option id="iluminaria" value="iluminaria" disabled>Iluminaria</option>
+                        </select>
                     </div>
                     <div class="input-container wrap">
                         <div class="option-both">
@@ -56,9 +56,9 @@
                             <label for="fases_afectadas">Fases Afectadas</label>
                             <select id="fases_afectadas">
                                 <option selected hidden>-- Seleccione Aqui --</option> 
-                                <option value="1f">1F</option> 
-                                <option value="2f">2F</option>
-                                <option value="3f">3F</option>
+                                <option value="1F">1F</option> 
+                                <option value="2F">2F</option>
+                                <option value="3F">3F</option>
                               </select>
                         </div>
                     </div>
@@ -97,6 +97,30 @@
                             <option value="construccion">Diseño, instalacion o construccion</option>
                             <option value="proteccion">Proteccion</option>
                             <option value="equipamiento">Falla de equipamiento</option>
+                          </select>
+                    </div>
+                    <div class="input-container">
+                        <label for="componente_falla">Componente con Falla</label>
+                        <select id="componente_falla">
+                            <option selected hidden>-- Seleccione Aqui --</option> 
+                            <option value="disyuntor">Disyuntor</option> 
+                            <option value="reconectador">Reconectador</option>
+                            <option value="transformador">Transformador de Distribucion</option>
+                            <option value="camara">Camara de Transformacion</option>
+                            <option value="seccionador_componente">Seccionador</option>
+                            <option value="seccionalizador">Seccionalizador</option>
+                            <option value="tc">TC</option>
+                            <option value="tp">TP</option>
+                            <option value="pararrayo_componente">Pararrayo</option>
+                            <option value="conductor_aereo">Conductor Aereo</option>
+                            <option value="conductor_subterraneo">Conductor Subterraneo</option>
+                            <option value="poste_distribucion">Poste de Distribucion</option>
+                            <option value="fusible_componente">Fusible</option>
+                            <option value="base_portafusible">Base Portafusible</option>
+                            <option value="aislador">Aislador</option>
+                            <option value="medidor_bt_mt">Medidor de BT/MT</option>
+                            <option value="acometida_componente">Acometida</option>
+                            <option value="conector">Conector</option>
                           </select>
                     </div>
                     <div class="input-container multi-option">
@@ -157,12 +181,16 @@
                     <td id="tipo_incidente_table"></td>
                 </tr>
                 <tr>
-                    <th>Dispositivo Afectado</th>
+                    <th id="dispositivo_table">Dispositivo Afectado</th>
                     <td id="dispositivo_afectado_table"></td>
                 </tr>
                 <tr>
                     <th>Nombre de Dispositivo</th>
                     <td id="no_dispositivo_table"></td>
+                </tr>
+                <tr id="fases_afectadas_tr">
+                    <th>Fases Afectadas</th>
+                    <td id="fases_afectadas_table"></td>
                 </tr>
                 <tr>
                     <th>Fecha y Hora de Superacion</th>
@@ -171,6 +199,10 @@
                 <tr>
                     <th>Causa del Incidente</th>
                     <td id="causa_table"></td>
+                </tr>
+                <tr>
+                    <th>Componente con Falla</th>
+                    <td id="componente_table"></td>
                 </tr>
                 <tr>
                     <th>Detalle del Problema</th>
