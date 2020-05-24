@@ -289,7 +289,7 @@
             enlace.download = "informe.png";
             // Convertir la imagen a Base64 y ponerlo en el enlace
             enlace.href = canvas.toDataURL();
-            $wpp_message.href = "whatsapp://send?text='+encodeURIComponent(" + canvas.toDataURL() + ")";
+            $wpp_message.href = 'whatsapp://send?text=' + encodeURIComponent(canvas.toDataURL());
             // Hacer click en él
             enlace.click();
         });
