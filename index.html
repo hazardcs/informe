@@ -17,7 +17,7 @@
     <div class="container">
         <div class="main">
             <div class="banner">
-                <h1>REPORTE DE INCIDENTES gg</h1>
+                <h1>REPORTE DE INCIDENTES 2</h1>
             </div>
             <div id="main_form" class="form-container">
                 <form autocomplete="off" id="form_incidente">
@@ -198,7 +198,6 @@
             <form class="informe-options">
                 <input type="button" id="nuevo_informe" value="Crear Nuevo Informe">
                 <input type="button" id="modificar_informe" value="Modificar Informe">
-                <input type="button" id="wpp" value="Enviar Informe">
                 <input type="button" id="download" value="Descargar Informe">
                 <input type="button" id="confirmar" value="Confirmar Informe">
             </form>
@@ -258,25 +257,23 @@
         const $boton = document.querySelector("#confirmar"), // El botón que desencadena
             $objetivo = document.querySelector("#informe_png"), // A qué le tomamos la foto
             $contenedorCanvas = document.querySelector("#preview"), // En dónde ponemos el elemento canvas
-            $wpp_message = document.querySelector("#wpp");
 
-        // Agregar el listener al botón
-        $boton.addEventListener("click", () => {
-            html2canvas($objetivo) // Llamar a html2canvas y pasarle el elemento
-                .then(canvas => {
-                    // Cuando se resuelva la promesa traerá el canvas
-                    $contenedorCanvas.appendChild(canvas); // Lo agregamos como hijo del div
-                    canvas.id = "canvas";
-                });
+            // Agregar el listener al botón
+            $boton.addEventListener("click", () => {
+                html2canvas($objetivo) // Llamar a html2canvas y pasarle el elemento
+                    .then(canvas => {
+                        // Cuando se resuelva la promesa traerá el canvas
+                        $contenedorCanvas.appendChild(canvas); // Lo agregamos como hijo del div
+                        canvas.id = "canvas";
+                    });
 
-        });
+            });
 
         $boton.addEventListener("click", function() {
             document.getElementById("nuevo_informe").style.display = "block";
             document.getElementById("modificar_informe").style.display = "none";
             document.getElementById("confirmar").style.display = "none";
             document.getElementById("download").style.display = "block";
-            document.getElementById("wpp").style.display = "block";
         });
 
         const $canvas = document.querySelector("#canvas"),
