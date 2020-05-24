@@ -60,6 +60,11 @@ body {
     display: flex;
 }
 
+.option-both input {
+    width: 60%;
+    height: 100%;
+}
+
 .input-container select {
     text-align: center;
 }
@@ -132,12 +137,54 @@ body {
     }
 }
 
+@media (min-width:360px) {
+    .form-container {
+        font-size: 0.9em;
+    }
+    .form-container form {
+        padding-right: 0px;
+    }
+}
+
 .input-container {
     margin: 5px 10px;
     padding: 8px 10px;
     border: 1.5px solid #fff;
     border-radius: 5px;
     width: 88%;
+}
+
+@media (min-width:410px) {
+    .form-container {
+        font-size: 0.9em;
+    }
+    .input-container {
+        margin: 10px auto;
+    }
+    .date-time-container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding-right: 30px;
+    }
+}
+
+@media (min-width:600px) {
+    .form-container {
+        font-size: 1.1em;
+    }
+}
+
+@media (min-width:700px) {
+    .input-container>textarea,
+    .input-container>input,
+    .input-container>select,
+    .option-both>select,
+    .option-both>textarea,
+    .option-both input {
+        width: 300px;
+        margin-right: 20px;
+    }
 }
 
 .enviar-input {
