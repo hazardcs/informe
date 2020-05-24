@@ -17,7 +17,7 @@
     <div class="container">
         <div class="main">
             <div class="banner">
-                <h1>REPORTE DE INCIDENTES gg</h1>
+                <h1>REPORTE DE INCIDENTES 2</h1>
             </div>
             <div id="main_form" class="form-container">
                 <form autocomplete="off" id="form_incidente">
@@ -199,6 +199,7 @@
                 <input type="button" id="nuevo_informe" value="Crear Nuevo Informe">
                 <input type="button" id="modificar_informe" value="Modificar Informe">
                 <a id="wpp" href="whatsapp://send?text='+encodeURIComponent(imageURL)">Enviar Informe</a>
+                <button id="lol">lol</button>
                 <input type="button" id="download" value="Descargar Informe">
                 <input type="button" id="confirmar" value="Confirmar Informe">
             </form>
@@ -292,6 +293,34 @@
             window.plugins.socialsharing.share(null, 'Android filename', canvas.toDataURL(), null);
             // Hacer click en él
             enlace.click();
+        });
+
+        //-------------------------------------------------------------------
+
+        const shareButton = document.querySelector('#lol');
+        const overlay = document.querySelector('.overlay');
+        const shareModal = document.querySelector('.share');
+
+        const title = window.document.title;
+        const url = window.document.location.url;
+
+        shareButton.addEventListener('click', () => {
+            if (navigator.share) {
+                navigator.share({
+                        title = `${title}`,
+                        url = `${url}`
+                    }).then(() => {
+                        console.log('success');
+                    })
+                    .catch(console.error);
+            } else {
+                overlay.classList.add("show-share");
+                shareModal.classList.add("show-share");
+            }
+        });
+
+        overlay.addEventListener('click', () => {
+            overlay.classList.remove("show-share");
         });
     </script>
 </body>
