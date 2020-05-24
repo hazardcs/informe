@@ -7,6 +7,10 @@
     <title>Reporte de Incidentes</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/html2canvas.min.js"></script>
+    <script src="js/canvas2image.js"></script>
+</head>
 </head>
 
 <body>
@@ -191,61 +195,103 @@
             </div>
         </div>
         <div id="informe_container" class="informe">
-            <table class="tabla-informe">
-                <tr>
-                    <th>No. Incidente</th>
-                    <td id="no_incidente_table"></td>
-                </tr>
-                <tr>
-                    <th>Incidentes Asociados</th>
-                    <td id="incidentes_asociados_table"></td>
-                </tr>
-                <tr>
-                    <th>Tipo de Incidente</th>
-                    <td id="tipo_incidente_table"></td>
-                </tr>
-                <tr>
-                    <th>Dispositivo o Elemento Afectado</th>
-                    <td id="dispositivo_afectado_table"></td>
-                </tr>
-                <tr>
-                    <th id="dispositivo_table">Nombre de Dispositivo</th>
-                    <td id="no_dispositivo_table"></td>
-                </tr>
-                <tr id="fases_afectadas_tr">
-                    <th>Fases Afectadas</th>
-                    <td id="fases_afectadas_table"></td>
-                </tr>
-                <tr>
-                    <th>Fecha y Hora de Superacion</th>
-                    <td id="fecha_hora_table"></td>
-                </tr>
-                <tr>
-                    <th>Causa del Incidente</th>
-                    <td id="causa_table"></td>
-                </tr>
-                <tr>
-                    <th>Componente con Falla</th>
-                    <td id="componente_table"></td>
-                </tr>
-                <tr>
-                    <th>Detalle del Problema</th>
-                    <td id="detalle_table"></td>
-                </tr>
-                <tr>
-                    <th>Comentario</th>
-                    <td id="comentario_table"></td>
-                </tr>
-            </table>
             <form class="informe-options">
                 <input type="button" id="nuevo_informe" value="Crear Nuevo Informe">
                 <input type="button" id="modificar_informe" value="Modificar Informe">
-                <a href="whatsapp://send?text=Hello%20World!">Hello, world!</a>
+                <a id="wpp" href="whatsapp://send?text=Hello%20World!">Enviar Informe</a>
+                <input type="button" id="download" value="Descargar Informe">
+                <input type="button" id="confirmar" value="Confirmar Informe">
             </form>
+            <div id="informe_png">
+                <table class="tabla-informe">
+                    <tr>
+                        <th>No. Incidente</th>
+                        <td id="no_incidente_table"></td>
+                    </tr>
+                    <tr>
+                        <th>Incidentes Asociados</th>
+                        <td id="incidentes_asociados_table"></td>
+                    </tr>
+                    <tr>
+                        <th>Tipo de Incidente</th>
+                        <td id="tipo_incidente_table"></td>
+                    </tr>
+                    <tr>
+                        <th>Dispositivo o Elemento Afectado</th>
+                        <td id="dispositivo_afectado_table"></td>
+                    </tr>
+                    <tr>
+                        <th id="dispositivo_table">Nombre de Dispositivo</th>
+                        <td id="no_dispositivo_table"></td>
+                    </tr>
+                    <tr id="fases_afectadas_tr">
+                        <th>Fases Afectadas</th>
+                        <td id="fases_afectadas_table"></td>
+                    </tr>
+                    <tr>
+                        <th>Fecha y Hora de Superacion</th>
+                        <td id="fecha_hora_table"></td>
+                    </tr>
+                    <tr>
+                        <th>Causa del Incidente</th>
+                        <td id="causa_table"></td>
+                    </tr>
+                    <tr>
+                        <th>Componente con Falla</th>
+                        <td id="componente_table"></td>
+                    </tr>
+                    <tr>
+                        <th>Detalle del Problema</th>
+                        <td id="detalle_table"></td>
+                    </tr>
+                    <tr>
+                        <th>Comentario</th>
+                        <td id="comentario_table"></td>
+                    </tr>
+                </table>
+            </div>
+            <div id="preview"></div>
         </div>
     </div>
-
     <script src="js/script.js"></script>
+    <script>
+        const $boton = document.querySelector("#confirmar"), // El botón que desencadena
+            $objetivo = document.querySelector("#informe_png"), // A qué le tomamos la foto
+            $contenedorCanvas = document.querySelector("#preview"); // En dónde ponemos el elemento canvas
+
+        // Agregar el listener al botón
+        $boton.addEventListener("click", () => {
+            html2canvas($objetivo) // Llamar a html2canvas y pasarle el elemento
+                .then(canvas => {
+                    // Cuando se resuelva la promesa traerá el canvas
+                    $contenedorCanvas.appendChild(canvas); // Lo agregamos como hijo del div
+                    canvas.id = "canvas";
+                });
+
+        });
+
+        $boton.addEventListener("click", function() {
+            document.getElementById("nuevo_informe").style.display = "block";
+            document.getElementById("modificar_informe").style.display = "none";
+            document.getElementById("confirmar").style.display = "none";
+            document.getElementById("download").style.display = "block";
+            document.getElementById("wpp").style.display = "block";
+        });
+
+        const $canvas = document.querySelector("#canvas"),
+            $boton_descargar = document.querySelector("#download");
+
+        $boton_descargar.addEventListener("click", () => {
+            // Crear un elemento <a>
+            let enlace = document.createElement('a');
+            // El título
+            enlace.download = "Canvas como imagen.png";
+            // Convertir la imagen a Base64 y ponerlo en el enlace
+            enlace.href = canvas.toDataURL();
+            // Hacer click en él
+            enlace.click();
+        });
+    </script>
 </body>
 
 </html>
