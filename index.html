@@ -198,7 +198,7 @@
             <form class="informe-options">
                 <input type="button" id="nuevo_informe" value="Crear Nuevo Informe">
                 <input type="button" id="modificar_informe" value="Modificar Informe">
-                <a id="wpp" href="whatsapp://send?text=Hello%20World!">Enviar Informe</a>
+                <a id="wpp" href="whatsapp://send?text='+encodeURIComponent(imageURL)">Enviar Informe</a>
                 <input type="button" id="download" value="Descargar Informe">
                 <input type="button" id="confirmar" value="Confirmar Informe">
             </form>
@@ -257,7 +257,8 @@
     <script>
         const $boton = document.querySelector("#confirmar"), // El botón que desencadena
             $objetivo = document.querySelector("#informe_png"), // A qué le tomamos la foto
-            $contenedorCanvas = document.querySelector("#preview"); // En dónde ponemos el elemento canvas
+            $contenedorCanvas = document.querySelector("#preview"), // En dónde ponemos el elemento canvas
+            $wpp_message = document.querySelector("#wpp");
 
         // Agregar el listener al botón
         $boton.addEventListener("click", () => {
@@ -285,9 +286,10 @@
             // Crear un elemento <a>
             let enlace = document.createElement('a');
             // El título
-            enlace.download = "Canvas como imagen.png";
+            enlace.download = "informe.png";
             // Convertir la imagen a Base64 y ponerlo en el enlace
             enlace.href = canvas.toDataURL();
+            $wpp_message.href = "whatsapp://send?text='+encodeURIComponent(" + canvas.toDataURL() + ")";
             // Hacer click en él
             enlace.click();
         });
