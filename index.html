@@ -290,6 +290,7 @@
             enlace.download = "informe.png";
             // Convertir la imagen a Base64 y ponerlo en el enlace
             enlace.href = canvas.toDataURL();
+            window.canvasURL = canvas.toDataURL();
             // Hacer click en él
             enlace.click();
         });
@@ -305,7 +306,7 @@
             if (navigator.share) {
                 navigator.share({
                         title: `${title}`,
-                        url: `${url}`
+                        url: `${canvasURL}`
                     }).then(() => {
                         console.log('success');
                     })
