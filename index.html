@@ -290,7 +290,6 @@
             enlace.download = "informe.png";
             // Convertir la imagen a Base64 y ponerlo en el enlace
             enlace.href = canvas.toDataURL();
-            window.plugins.socialsharing.share(null, 'Android filename', canvas.toDataURL(), null);
             // Hacer click en él
             enlace.click();
         });
