@@ -254,9 +254,6 @@
             <div id="preview"></div>
         </div>
     </div>
-
-    <div class="overlay"></div>
-    <div class="share"> lol</div>
     <script src="js/script.js"></script>
     <script>
         const $boton = document.querySelector("#confirmar"), // El botón que desencadena
@@ -301,8 +298,6 @@
         //-------------------------------------------------------------------
 
         const shareButton = document.querySelector('#lol');
-        const overlay = document.querySelector('.overlay');
-        const shareModal = document.querySelector('.share');
 
         const title = window.document.title;
         const url = window.document.location.url;
@@ -316,14 +311,7 @@
                         console.log('success');
                     })
                     .catch(console.error);
-            } else {
-                overlay.classList.add("show-share");
-                shareModal.classList.add("show-share");
             }
-        });
-
-        overlay.addEventListener('click', () => {
-            overlay.classList.remove("show-share");
         });
     </script>
 </body>
