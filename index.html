@@ -198,7 +198,7 @@
             <form class="informe-options">
                 <input type="button" id="nuevo_informe" value="Crear Nuevo Informe">
                 <input type="button" id="modificar_informe" value="Modificar Informe">
-                <a id="wpp" href="whatsapp://send?text='+encodeURIComponent(imageURL)">Enviar Informe</a>
+                <input type="button" id="wpp" value="Enviar Informe">
                 <input type="button" id="download" value="Descargar Informe">
                 <input type="button" id="confirmar" value="Confirmar Informe">
             </form>
@@ -289,7 +289,6 @@
             enlace.download = "informe.png";
             // Convertir la imagen a Base64 y ponerlo en el enlace
             enlace.href = canvas.toDataURL();
-            window.plugins.socialsharing.share(null, 'Android filename', canvas.toDataURL(), null);
             // Hacer click en él
             enlace.click();
         });
