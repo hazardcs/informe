@@ -198,6 +198,7 @@
             <form class="informe-options">
                 <input type="button" id="nuevo_informe" value="Crear Nuevo Informe">
                 <input type="button" id="modificar_informe" value="Modificar Informe">
+                <a href="whatsapp://send?text=" +encodeURIComponent(img/gangsta.jpg) id="wpp">Enviar Mensaje</a>
                 <input type="button" id="download" value="Descargar Informe">
                 <input type="button" id="confirmar" value="Confirmar Informe">
             </form>
@@ -256,22 +257,24 @@
     <script>
         const $boton = document.querySelector("#confirmar"), // El botón que desencadena
             $objetivo = document.querySelector("#informe_png"), // A qué le tomamos la foto
-            $contenedorCanvas = document.querySelector("#preview"), // En dónde ponemos el elemento canvas
+            $contenedorCanvas = document.querySelector("#preview"),
+            $enviar = document.querySelector("#wpp") // En dónde ponemos el elemento canvas
 
-            // Agregar el listener al botón
-            $boton.addEventListener("click", () => {
-                html2canvas($objetivo) // Llamar a html2canvas y pasarle el elemento
-                    .then(canvas => {
-                        // Cuando se resuelva la promesa traerá el canvas
-                        $contenedorCanvas.appendChild(canvas); // Lo agregamos como hijo del div
-                        canvas.id = "canvas";
-                    });
+        // Agregar el listener al botón
+        $boton.addEventListener("click", () => {
+            html2canvas($objetivo) // Llamar a html2canvas y pasarle el elemento
+                .then(canvas => {
+                    // Cuando se resuelva la promesa traerá el canvas
+                    $contenedorCanvas.appendChild(canvas); // Lo agregamos como hijo del div
+                    canvas.id = "canvas";
+                });
 
-            });
+        });
 
         $boton.addEventListener("click", function() {
             document.getElementById("nuevo_informe").style.display = "block";
             document.getElementById("modificar_informe").style.display = "none";
+            $enviar.style.display = "block";
             document.getElementById("confirmar").style.display = "none";
             document.getElementById("download").style.display = "block";
         });
