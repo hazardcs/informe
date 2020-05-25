@@ -296,13 +296,15 @@
         //-------------------------------------------------------------------
 
         const title = window.document.title;
+        const url = window.document.location.href;
 
         const shareButton = document.getElementById("wpp");
 
         shareButton.addEventListener('click', () => {
             if(navigator.share){
                 navigator.share({
-                    title : `${title}`
+                    title : `${title}`,
+                    url : `${url}`
                 })
             }
         });
