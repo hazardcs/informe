@@ -17,7 +17,7 @@
     <div class="container">
         <div class="main">
             <div class="banner">
-                <h1>REPORTE DE INCIDENTES 20</h1>
+                <h1>REPORTE DE INCIDENTES 00</h1>
             </div>
             <div id="main_form" class="form-container">
                 <form autocomplete="off" id="form_incidente">
@@ -283,10 +283,9 @@
 
         const $canvas = document.querySelector("#canvas"),
             $boton_descargar = document.querySelector("#download");
+        var enlace = document.createElement("a"); 
 
         $boton_descargar.addEventListener("click", () => {
-            // Crear un elemento <a>
-            let enlace = document.createElement('a');
             // El título
             enlace.download = "informe.png";
             // Convertir la imagen a Base64 y ponerlo en el enlace
@@ -306,14 +305,16 @@
 
             var img = document.getElementById("canvas");
 
-            console.log(img.toDataURL());
+            console.log(img.toDataURL("image/png"));
 
             if(navigator.share){
                 navigator.share({text: 'Informe',
                  text: "Hola",
-                 url : img.toDataURL() 
+                 url : enlace 
                  });
             }
+
+            console.log(enlace);
 
         });
     </script>
