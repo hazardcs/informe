@@ -301,9 +301,9 @@
 
         shareButton.addEventListener('click', () => {
             if(navigator.share){
-                navigator.share(){
-                    title : `${title}`;
-                }
+                navigator.share({
+                    title : `${title}`
+                })
             }
         });
     </script>
