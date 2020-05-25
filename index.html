@@ -17,7 +17,7 @@
     <div class="container">
         <div class="main">
             <div class="banner">
-                <h1>REPORTE DE INCIDENTES gg</h1>
+                <h1>REPORTE DE INCIDENTES 2</h1>
             </div>
             <div id="main_form" class="form-container">
                 <form autocomplete="off" id="form_incidente">
@@ -257,8 +257,8 @@
     <script>
         const $boton = document.querySelector("#confirmar"), // El botón que desencadena
             $objetivo = document.querySelector("#informe_png"), // A qué le tomamos la foto
-            $contenedorCanvas = document.querySelector("#preview"), // En dónde ponemos el elemento canvas
-            $wpp_message = document.querySelector("#wpp");
+            $contenedorCanvas = document.querySelector("#preview"),
+            $enviar = document.querySelector("#wpp") // En dónde ponemos el elemento canvas
 
         // Agregar el listener al botón
         $boton.addEventListener("click", () => {
@@ -274,9 +274,9 @@
         $boton.addEventListener("click", function() {
             document.getElementById("nuevo_informe").style.display = "block";
             document.getElementById("modificar_informe").style.display = "none";
+            $enviar.style.display = "block";
             document.getElementById("confirmar").style.display = "none";
             document.getElementById("download").style.display = "block";
-            document.getElementById("wpp").style.display = "block";
         });
 
         const $canvas = document.querySelector("#canvas"),
