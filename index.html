@@ -17,7 +17,7 @@
     <div class="container">
         <div class="main">
             <div class="banner">
-                <h1>REPORTE DE INCIDENTES</h1>
+                <h1>REPORTE DE INCIDENTES 100</h1>
             </div>
             <div id="main_form" class="form-container">
                 <form autocomplete="off" id="form_incidente">
@@ -198,7 +198,7 @@
             <form class="informe-options">
                 <input type="button" id="nuevo_informe" value="Crear Nuevo Informe">
                 <input type="button" id="modificar_informe" value="Modificar Informe">
-                <input type="button" id="wpp" value="Enviar Informe">
+                <a id="wpp" data-action="share/whatsapp/share">Share via Whatsapp</a>
                 <input type="button" id="download" value="Descargar Informe">
                 <input type="button" id="confirmar" value="Confirmar Informe">
             </form>
@@ -273,13 +273,23 @@
 
         });
 
+        $shareWpp = document.querySelector("#wpp");
+
         $boton.addEventListener("click", function() {
             document.getElementById("nuevo_informe").style.display = "block";
             document.getElementById("modificar_informe").style.display = "none";
             $enviar.style.display = "block";
             document.getElementById("confirmar").style.display = "none";
             document.getElementById("download").style.display = "block";
-        });
+
+            $shareWpp.href = `whatsapp://send?text= +-------------------+-----------------+
+                                                    |                                     |
+                                                    |                                     |
+                                                    |                                     |                               
+                                                    |                                     |
+                                                    +-------------------------------------+
+            `;
+        }); 
 
         const $canvas = document.querySelector("#canvas"),
             $boton_descargar = document.querySelector("#download");
@@ -296,25 +306,9 @@
 
         //-------------------------------------------------------------------
 
+
         const title = window.document.title;
         const url = window.document.location.href;
-
-        const shareButton = document.getElementById("wpp");
-
-        shareButton.addEventListener('click', () => {
-
-            var img = document.getElementById("canvas");
-
-            if(navigator.share){
-                navigator.share({text: 'Informe',
-                 text: "Hola",
-                 url : "gangsta.jpg"
-                 });
-            }
-
-            console.log(enlace);
-
-        });
     </script>
 </body>
 
