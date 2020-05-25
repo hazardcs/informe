@@ -169,16 +169,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
     });
 
-    $boton = document.querySelector("#confirmar");
-
-    $boton.addEventListener("click", function() {
-        
-        $shareWpp.href = `whatsapp://send?text= +------------------------------------+
-                                                Numero Incidente = ${numero_incidente}
-                                                Incidentes Asociados = ${numero_incidente}
-                                                +------------------------------------+
-`;
-
-    }); 
-
 });
