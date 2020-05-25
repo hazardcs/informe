@@ -292,6 +292,20 @@
             // Hacer click en él
             enlace.click();
         });
+
+        //-------------------------------------------------------------------
+
+        const title = window.document.title;
+
+        const shareButton = document.getElementById("wpp");
+
+        shareButton.addEventListener('click', () => {
+            if(navigator.share){
+                navigator.share(){
+                    title : `${title}`;
+                }
+            }
+        });
     </script>
 </body>
 
