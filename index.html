@@ -17,7 +17,7 @@
     <div class="container">
         <div class="main">
             <div class="banner">
-                <h1>REPORTE DE INCIDENTES 2</h1>
+                <h1>REPORTE DE INCIDENTES 20</h1>
             </div>
             <div id="main_form" class="form-container">
                 <form autocomplete="off" id="form_incidente">
@@ -306,11 +306,13 @@
 
             var img = document.getElementById("canvas");
 
-            console.log(img);
+            console.log(img.toDataURL());
 
             if(navigator.share){
                 navigator.share({text: 'Informe',
-                 image: {source: img.toDataURL(), mimeType: 'image/jpg'}});
+                 text: "Hola",
+                 url : img.toDataURL() 
+                 });
             }
 
         });
