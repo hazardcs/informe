@@ -17,7 +17,7 @@
     <div class="container">
         <div class="main">
             <div class="banner">
-                <h1>REPORTE DE INCIDENTES</h1>
+                <h1>REPORTE DE INCIDENTES f</h1>
             </div>
             <div id="main_form" class="form-container">
                 <form autocomplete="off" id="form_incidente">
@@ -251,6 +251,7 @@
                 </table>
             </div>
             <div id="preview"></div>
+            <img id="img">
         </div>
     </div>
     <script src="js/script.js"></script>
@@ -258,7 +259,8 @@
         const $boton = document.querySelector("#confirmar"), // El botón que desencadena
             $objetivo = document.querySelector("#informe_png"), // A qué le tomamos la foto
             $contenedorCanvas = document.querySelector("#preview"),
-            $enviar = document.querySelector("#wpp") // En dónde ponemos el elemento canvas
+            $img = document.querySelector("#img"),
+            $enviar = document.querySelector("#wpp") 
 
         // Agregar el listener al botón
         $boton.addEventListener("click", () => {
@@ -279,7 +281,7 @@
             document.getElementById("download").style.display = "block";
         });
 
-        const $canvas = document.querySelector("#canvas"),
+
             $boton_descargar = document.querySelector("#download");
 
         $boton_descargar.addEventListener("click", () => {
@@ -289,6 +291,7 @@
             enlace.download = "informe.png";
             // Convertir la imagen a Base64 y ponerlo en el enlace
             enlace.href = canvas.toDataURL();
+            $img.setAttribute("src", canvas.toDataURL());
             // Hacer click en él
             enlace.click();
         });
@@ -304,7 +307,9 @@
             if(navigator.share){
                 navigator.share({
                     title : `${title}`,
-                    url : `${url}`
+                    url : `${url}`,
+                    image: `${img}`,
+                    mimeType: 'image/png'
                 })
             }
         });
