@@ -250,15 +250,14 @@
                 </table>
             </div>
             <div id="preview"></div>
-            <img id="img">
         </div>
     </div>
     <script src="js/script.js"></script>
     <script>
+
         const $boton = document.querySelector("#confirmar"), // El botón que desencadena
             $objetivo = document.querySelector("#informe_png"), // A qué le tomamos la foto
-            $contenedorCanvas = document.querySelector("#preview"),
-            $img = document.querySelector("#img")
+            $contenedorCanvas = document.querySelector("#preview")
 
         // Agregar el listener al botón
         $boton.addEventListener("click", () => {
@@ -266,24 +265,26 @@
                 .then(canvas => {
                     // Cuando se resuelva la promesa traerá el canvas
                     $contenedorCanvas.appendChild(canvas); // Lo agregamos como hijo del div
+                    console.log(canvas);
                     canvas.id = "canvas";
                 });
 
         });
+
+        $shareWpp = document.querySelector("#wpp");
 
         $boton.addEventListener("click", function() {
             document.getElementById("nuevo_informe").style.display = "block";
             document.getElementById("modificar_informe").style.display = "none";
             document.getElementById("confirmar").style.display = "none";
             document.getElementById("download").style.display = "block";
-        });
+        }); 
 
-
+        const $canvas = document.querySelector("#canvas"),
             $boton_descargar = document.querySelector("#download");
+        var enlace = document.createElement("a"); 
 
         $boton_descargar.addEventListener("click", () => {
-            // Crear un elemento <a>
-            let enlace = document.createElement('a');
             // El título
             enlace.download = "informe.png";
             // Convertir la imagen a Base64 y ponerlo en el enlace
