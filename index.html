@@ -17,7 +17,7 @@
     <div class="container">
         <div class="main">
             <div class="banner">
-                <h1>REPORTE DE INCIDENTES f</h1>
+                <h1>REPORTE DE INCIDENTES</h1>
             </div>
             <div id="main_form" class="form-container">
                 <form autocomplete="off" id="form_incidente">
@@ -198,7 +198,6 @@
             <form class="informe-options">
                 <input type="button" id="nuevo_informe" value="Crear Nuevo Informe">
                 <input type="button" id="modificar_informe" value="Modificar Informe">
-                <input type="button" id="wpp" value="Enviar Informe">
                 <input type="button" id="download" value="Descargar Informe">
                 <input type="button" id="confirmar" value="Confirmar Informe">
             </form>
@@ -259,8 +258,7 @@
         const $boton = document.querySelector("#confirmar"), // El botón que desencadena
             $objetivo = document.querySelector("#informe_png"), // A qué le tomamos la foto
             $contenedorCanvas = document.querySelector("#preview"),
-            $img = document.querySelector("#img"),
-            $enviar = document.querySelector("#wpp") 
+            $img = document.querySelector("#img")
 
         // Agregar el listener al botón
         $boton.addEventListener("click", () => {
@@ -276,7 +274,6 @@
         $boton.addEventListener("click", function() {
             document.getElementById("nuevo_informe").style.display = "block";
             document.getElementById("modificar_informe").style.display = "none";
-            $enviar.style.display = "block";
             document.getElementById("confirmar").style.display = "none";
             document.getElementById("download").style.display = "block";
         });
@@ -291,28 +288,10 @@
             enlace.download = "informe.png";
             // Convertir la imagen a Base64 y ponerlo en el enlace
             enlace.href = canvas.toDataURL();
-            $img.setAttribute("src", canvas.toDataURL());
             // Hacer click en él
             enlace.click();
         });
 
-        //-------------------------------------------------------------------
-
-        const title = window.document.title;
-        const url = window.document.location.href;
-
-        const shareButton = document.getElementById("wpp");
-
-        shareButton.addEventListener('click', () => {
-            if(navigator.share){
-                navigator.share({
-                    title : `${title}`,
-                    url : `${url}`,
-                    image: `${img}`,
-                    mimeType: 'image/png'
-                })
-            }
-        });
     </script>
 </body>
 
